@@ -11,6 +11,15 @@ app.use(express.json());
 // Routes
 app.use("/api/schools", schoolRoutes);
 
+// Health check endpoint for Docker
+app.get("/health", (req, res) => {
+    res.status(200).json({ 
+        status: "OK", 
+        timestamp: new Date().toISOString(),
+        uptime: process.uptime()
+    });
+});
+
 // default route
 app.get("/", (req, res) => {
     res.send("Welcome to the School API");

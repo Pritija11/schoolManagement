@@ -1,4 +1,60 @@
-School Management
+# School Management API
+
+A Node.js + MySQL REST API to add schools and list nearby schools based on user location. Built with Express.js and MySQL, fully containerized with Docker.
+
+## Features
+
+- Add new schools with name, address, latitude, and longitude
+- List schools sorted by proximity to a user's location
+- Input validation via middleware
+- **Docker containerization for easy deployment**
+- **MySQL database with automated setup**
+- **Health check endpoints**
+
+## Quick Start with Docker
+
+### Prerequisites
+- Docker and Docker Compose installed
+
+### 1. Build and run with Docker Compose
+
+#### For Production:
+```bash
+# Build and start all services
+docker-compose up --build
+
+# Run in detached mode (background)
+docker-compose up -d --build
+```
+
+#### For Development:
+```bash
+# Use the development compose file
+docker-compose -f docker-compose.dev.yml up --build
+```
+
+### 2. Access the API
+- API Base URL: `http://localhost:3000`
+- Health Check: `http://localhost:3000/health`
+- MySQL Database: `localhost:3306`
+
+## Docker Commands
+
+### Basic Operations
+```bash
+# Stop all services
+docker-compose down
+
+# View logs
+docker-compose logs app
+docker-compose logs mysql
+
+# Restart a specific service
+docker-compose restart app
+
+# Remove all containers and volumes
+docker-compose down -v
+```agement
 A Node.js + MySQL REST API to add schools and list nearby schools based on user location. Built with Express.js and MySQL.
 
 # Features
